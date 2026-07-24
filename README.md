@@ -1,5 +1,6 @@
 # 반도체 공정 센서 기반 불량(Yield) 예측 및 원인 센서 분석
 590개 공정 센서로 웨이퍼 합불을 예측하고, 시각 탐색(Spotfire)과 머신러닝(Python)을 교차검증해 불량 연관 센서를 도출한 프로젝트. 극단적 클래스 불균형·결측 처리와 SPC 관점 해석.
+> **핵심 결과** — 개별 센서로는 판별 불가 → RF(AUC 0.80)+임계값 조정으로 불량 62% 검출, 상위 센서 sensor_59·103·33 도출.
 
 ## 1. Project Overview
 - 목표: 공정 중 측정된 센서 값만으로 최종 합불(Pass/Fail)을 예측하고, 불량과 연관된 센서를 좁혀내기 위함. (Pass/Fail은 센서가 계산한 값이 아니라 별도 최종 검사의 실제 결과이며, 목표는 센서로 그 결과를 예측·선별하고 원인을 추적하는 것)
@@ -33,7 +34,8 @@
 
 정확도가 아니라 Recall·ROC-AUC를 기준으로 평가. 불량 유출(소비자 위험)이 오검(생산자 위험)보다 치명적이므로 Recall 중심으로 임계값을 낮춰 튜닝. 최종 임계값은 비용 등 다양한 상황을 고려하여 결정해야함
 
- <img width="473" height="498" alt="스크린샷 2026-07-24 132628" src="https://github.com/user-attachments/assets/9e56889c-7934-48a4-bd03-2f69f82e9309" />
+ <img width="473" height="498" alt="스크린샷 2026-07-24 132628" src="https://github.com/user-attachments/assets/9e56889c-7934-48a4-bd03-2f69f82e9309" />![](이미지)
+*LogReg(AUC 0.67) vs RF(AUC 0.80). RF가 좌상단에 더 붙어 순위 능력 우수.*
 
 
 ## 6. Key Findings
@@ -69,7 +71,7 @@ jupyter notebook secom_yield_prediction.ipynb   # 위에서 아래로 순서대�
 - Random Forest·Feature Importance
 - 모델↔시각화 교차검증
 
-## 기타사항
+## 학습 과정
 - LLM을 학습 튜터로 활용하되, 모든 개념을 1차 자료(공식 문서·실제 사례)로 교차검증하고, 모델 결과를 Spotfire 시각화로 재검증하는 방식으로 진행함.
 
-Data: M. McCann, A. Johnston (2008), SECOM Dataset, UCI Machine Learning Repository.
+Data: Kaggle SECOM Dataset
