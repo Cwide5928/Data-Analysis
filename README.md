@@ -69,4 +69,7 @@ jupyter notebook secom_yield_prediction.ipynb   # 위에서 아래로 순서대�
 - Random Forest·Feature Importance
 - 모델↔시각화 교차검증
 
+## 기타사항
+- LLM을 학습 튜터로 활용하되, 모든 개념을 1차 자료(공식 문서·실제 사례)로 교차검증하고, 모델 결과를 Spotfire 시각화로 재검증하는 방식으로 진행함.
+
 Data: M. McCann, A. Johnston (2008), SECOM Dataset, UCI Machine Learning Repository.
