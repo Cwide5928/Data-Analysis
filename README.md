@@ -11,7 +11,7 @@
 - UCI SECOM (Kaggle uci-secom.csv)의 1,567 웨이퍼 × 590 익명 센서 + 타임스탬프 + Pass/Fail(양품 1,463 / 불량 104). 센서는 익명화되어 물리적 의미 비공개. 2008년 공개 벤치마크(방법론 학습용).
 
 
-## 3. Tech Stack
+## 3. 사용 도구
 - Python: pandas, numpy, scikit-learn (Pipeline, RandomForest, LogisticRegression), matplotlib
 
 - 시각화: Spotfire (SPC 관리도·분포 탐색), Jupyter Notebook
