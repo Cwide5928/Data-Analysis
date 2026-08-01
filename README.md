@@ -23,7 +23,9 @@
 - [2] Python 머신러닝 — "어떤 센서가 원인인가" 전처리(결측 50%↑·상수 센서 제거, 중앙값 대치, 표준화, 층화 분할) → 기준 모델(LogReg) vs Random Forest → precision-recall 곡선으로 임계값 조정 → Feature Importance.
 
 - [3] 교차검증 — 앞선 결과를 바탕으로 영향이 가장 큰 센서(sensor_59)를 Spotfire 상자그림으로 재확인: 양품 중앙값 0.72 vs 불량 5.52로 실제 분포 차이 확인(겹쳤던 sensor_0와 대조).
-<img width="1434" height="960" alt="스크린샷 2026-07-24 115211" src="https://github.com/user-attachments/assets/ba659b8b-1aa3-4872-ba95-a6600b83d5a8" />
+
+<img width="1434" height="960" alt="image" src="https://github.com/user-attachments/assets/e045d6cd-2295-44c7-b5e6-f1d466168223" />
+
 
 ## 5. 성능 요약
 | 실험  | 모델                  | 불균형 처리                | 임계값      | Recall(불량) | Precision(불량) | ROC-AUC | 비고                                                 |
@@ -34,7 +36,8 @@
 
 정확도가 아니라 Recall·ROC-AUC를 기준으로 평가. 불량 유출(소비자 위험)이 오검(생산자 위험)보다 치명적이므로 Recall 중심으로 임계값을 낮춰 튜닝. 최종 임계값은 비용 등 다양한 상황을 고려하여 결정해야함
 
- <img width="473" height="498" alt="스크린샷 2026-07-24 132628" src="https://github.com/user-attachments/assets/9e56889c-7934-48a4-bd03-2f69f82e9309" />![](이미지)
+<img width="473" height="498" alt="image" src="https://github.com/user-attachments/assets/4962d421-18ae-4531-9f16-641d2f971a44" />
+
 *LogReg(AUC 0.67) vs RF(AUC 0.80). RF가 좌상단에 더 붙어 순위 능력 우수.*
 
 
@@ -44,7 +47,8 @@
 - Feature Importance: 불량 연관 상위 sensor_59(0.016), sensor_103(0.013), sensor_33(0.012). 단 중요도가 낮고 고르게 분포 → 단일 원인 센서는 없으며 불량은 다변량 상호작용의 결과.
 - 모델이 지목한 sensor_59가 시각(상자그림)에서도 실제 분포 차이를 보여 모델↔시각화 교차검증 성립.
 
-<img width="594" height="780" alt="스크린샷 2026-07-24 114715" src="https://github.com/user-attachments/assets/ebfbd694-826b-43e1-8bb8-38d21878fb34" />
+<img width="594" height="780" alt="image" src="https://github.com/user-attachments/assets/f3e92922-aa31-49d6-b3c0-038bb535305f" />
+
 
 
 ## 7. How to Run
